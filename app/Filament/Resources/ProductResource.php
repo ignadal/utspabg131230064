@@ -49,7 +49,7 @@ class ProductResource extends Resource
                     ->required()
                     ->numeric(),
 
-                SpatieMediaLibraryFileUpload::make('gambarproduk')
+                Forms\Components\SpatieMediaLibraryFileUpload::make('gambarproduk')
                     ->collection('gambarproduk')
                     ->label('Gambar Produk')
                     ->image()
@@ -62,13 +62,13 @@ class ProductResource extends Resource
     {
     return $table
         ->columns([
-            SpatieMediaLibraryImageColumn::make('gambarproduk')
+            Tables\Columns\SpatieMediaLibraryImageColumn::make('gambarproduk')
                 ->collection('gambarproduk')
                 ->label('Gambar')
                 ->square()
                 ->conversion('thumb') 
-                ->height(70) 
-                ->width(70)  
+                ->height(60) 
+                ->width(60)  
                 ->extraImgAttributes(['class' => 'rounded-lg object-cover'])
                 ->square(false),
 
